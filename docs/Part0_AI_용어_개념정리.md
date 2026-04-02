@@ -40,6 +40,7 @@ flowchart TB
         Agentic --> SW
         Physical --> HW
         WorldModel -.->|"AGI로 가는 다리"| AGI
+        Agentic -.->|"AGI로 가는 다리"| AGI
         AI -.->|"궁극적 목표"| AGI
     end
 
@@ -74,7 +75,7 @@ AI Governance의 국내 구체적 사례입니다. AI 사업자가 준수해야 
 
 | 의무 | 핵심 내용 |
 | --- | --- |
-| **1. 투명성 — 사전 고지** | 고영향 AI나 생성형 AI 기반 제품/서비스라는 사실을 이용자에게 사전 고지해야 합니다. 계약서, 사용설명서, 이용약관, 서비스 화면 등에 기재합니다. |
+| **1. 투명성 사전 고지** | 고영향 AI나 생성형 AI 기반 제품/서비스라는 사실을 이용자에게 사전 고지해야 합니다. 계약서, 사용설명서, 이용약관, 서비스 화면 등에 기재합니다. |
 | **2. 생성물 표시** | AI가 생성한 결과물임을 표시해야 합니다. 일반 생성물은 사람이 인식할 수 있는 표시 또는 워터마크 등 기계 판독 방식 모두 가능하고, **딥페이크** 의 경우 이용자가 명확하게 인식할 수 있는 표시만 허용됩니다. |
 | **3. 안전성/신뢰성 확보** | 위험관리방안 수립/운영, AI 설명 방안 수립/시행, 이용자 보호 방안 수립/운영, 고영향 AI에 대한 사람의 관리/감독을 이행해야 합니다. 관련 확인 문서를 작성하여 **5년간 보관** 하고, 주요 내용은 사업장이나 홈페이지에 게시해야 합니다 (영업비밀 제외 가능). |
 | **4. AI 영향평가** | 고영향 AI가 사람의 기본권에 미치는 영향을 사전 평가할 수 있습니다. 영향평가를 실시한 제품/서비스는 **국가기관 조달에서 우선 고려** 됩니다. 자율적 평가이지만 공공조달 인센티브와 연결되어 사실상 유도하는 구조입니다. |
@@ -91,14 +92,12 @@ flowchart LR
     GenAI --> Image["<b>Image AI</b><br/>이미지 생성<br/><i>Midjourney, DALL-E<br/>Stable Diffusion</i>"]
     GenAI --> Video["<b>Video AI</b><br/>영상 생성<br/><i>Sora, Runway, Veo</i>"]
     GenAI --> World["<b>World Model</b><br/>세계 시뮬레이션<br/><i>Genie, Cosmos</i>"]
-    World -.->|"AGI로 가는 다리"| AGI["<b>AGI</b>"]
 
     style GenAI fill:#9B59B6,color:#fff
     style LLM fill:#3498DB,color:#fff
     style Image fill:#E74C3C,color:#fff
     style Video fill:#E67E22,color:#fff
     style World fill:#16A085,color:#fff
-    style AGI fill:#F1C40F,color:#000
 ```
 
 ---
