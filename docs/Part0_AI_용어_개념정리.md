@@ -15,6 +15,25 @@
 
 ---
 
+## Generative AI 세부 분류
+
+```mermaid
+flowchart LR
+    GenAI["<b>Generative AI</b><br/>생성형 AI"]
+    GenAI --> LLM["<b>LLM</b><br/>텍스트 생성<br/><i>GPT, Claude, Gemini</i>"]
+    GenAI --> Image["<b>Image AI</b><br/>이미지 생성<br/><i>Midjourney, DALL-E<br/>Stable Diffusion</i>"]
+    GenAI --> Video["<b>Video AI</b><br/>영상 생성<br/><i>Sora, Runway, Veo</i>"]
+    GenAI --> World["<b>World Model</b><br/>세계 시뮬레이션<br/><i>Genie, Cosmos</i>"]
+
+    style GenAI fill:#9B59B6,color:#fff
+    style LLM fill:#3498DB,color:#fff
+    style Image fill:#E74C3C,color:#fff
+    style Video fill:#E67E22,color:#fff
+    style World fill:#16A085,color:#fff
+```
+
+---
+
 ## 개념 관계도
 
 ```mermaid
@@ -80,25 +99,6 @@ AI Governance의 국내 구체적 사례입니다. AI 사업자가 준수해야 
 | **3. 안전성/신뢰성 확보** | 위험관리방안 수립/운영, AI 설명 방안 수립/시행, 이용자 보호 방안 수립/운영, 고영향 AI에 대한 사람의 관리/감독을 이행해야 합니다. 관련 확인 문서를 작성하여 **5년간 보관** 하고, 주요 내용은 사업장이나 홈페이지에 게시해야 합니다 (영업비밀 제외 가능). |
 | **4. AI 영향평가** | 고영향 AI가 사람의 기본권에 미치는 영향을 사전 평가할 수 있습니다. 영향평가를 실시한 제품/서비스는 **국가기관 조달에서 우선 고려** 됩니다. 자율적 평가이지만 공공조달 인센티브와 연결되어 사실상 유도하는 구조입니다. |
 | **5. 국내 대리인 지정** | 해외 빅테크 기업은 국내 대리인을 지정해야 하며, 위반 시 **3,000만 원 이하 과태료** 가 부과됩니다. 한국 내 이용자 보호와 법적 책임 소재를 명확히 하기 위한 조치입니다. |
-
----
-
-## Generative AI 세부 분류
-
-```mermaid
-flowchart LR
-    GenAI["<b>Generative AI</b><br/>생성형 AI"]
-    GenAI --> LLM["<b>LLM</b><br/>텍스트 생성<br/><i>GPT, Claude, Gemini</i>"]
-    GenAI --> Image["<b>Image AI</b><br/>이미지 생성<br/><i>Midjourney, DALL-E<br/>Stable Diffusion</i>"]
-    GenAI --> Video["<b>Video AI</b><br/>영상 생성<br/><i>Sora, Runway, Veo</i>"]
-    GenAI --> World["<b>World Model</b><br/>세계 시뮬레이션<br/><i>Genie, Cosmos</i>"]
-
-    style GenAI fill:#9B59B6,color:#fff
-    style LLM fill:#3498DB,color:#fff
-    style Image fill:#E74C3C,color:#fff
-    style Video fill:#E67E22,color:#fff
-    style World fill:#16A085,color:#fff
-```
 
 ---
 

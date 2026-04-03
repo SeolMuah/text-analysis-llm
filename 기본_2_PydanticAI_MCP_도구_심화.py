@@ -81,6 +81,9 @@ MCP_SLEEP_SEC = 4
 # npx로 @modelcontextprotocol/server-filesystem을 실행합니다
 # 허용할 디렉토리 경로를 인자로 전달합니다 (이 디렉토리 밖에는 접근할 수 없습니다)
 
+
+# pip install pandas
+# npx 
 async def _run_fs_list():
     fs_server = MCPServerStdio(
         'npx',                      # MCP 서버를 실행할 명령어 (Node.js 패키지 러너)
@@ -91,6 +94,7 @@ async def _run_fs_list():
         ],
         timeout=30,                 # 서버 시작 대기 시간(초). 첫 실행 시 패키지 다운로드로 오래 걸릴 수 있음
     )
+    
     # Agent 생성 - toolsets에 MCP 서버를 등록합니다
     fs_agent = Agent(
         model_id,
@@ -307,10 +311,10 @@ async def main():
     # 각 섹션 사이에 asyncio.sleep()으로 간격을 두어
     # 무료 API 호출 제한을 피하기 위해 섹션 사이에 대기합니다.
     await run_section_1()  # 1. MCP 서버 연결 기초 - 파일시스템 MCP 서버 연결
-    await asyncio.sleep(MCP_SLEEP_SEC)  # 무료 API 호출 대기
-    await run_section_2()  # 2. 파일시스템 MCP 활용 - 보고서 작성 및 파일 검색
-    await asyncio.sleep(MCP_SLEEP_SEC)  # 무료 API 호출 제한 대기
-    await run_section_3()  # 3. 웹 가져오기 MCP 활용 - 웹페이지 요약 및 파일 저장
+    # await asyncio.sleep(MCP_SLEEP_SEC)  # 무료 API 호출 대기
+    # await run_section_2()  # 2. 파일시스템 MCP 활용 - 보고서 작성 및 파일 검색
+    # await asyncio.sleep(MCP_SLEEP_SEC)  # 무료 API 호출 제한 대기
+    # await run_section_3()  # 3. 웹 가져오기 MCP 활용 - 웹페이지 요약 및 파일 저장
 
     # ── 여러 섹션 동시에 실행하기 (병렬 실행) ──
     # asyncio.gather()는 여러 코루틴을 동시에(concurrently) 실행합니다.
