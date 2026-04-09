@@ -1,0 +1,675 @@
+{
+  "user_request": "채널/상품군/고객 속성별 매출 특징을 분석해 주세요.",
+  "data_path": "./data/h&m dataset",
+  "source_count": 3,
+  "sources": [
+    {
+      "source_name": "articles_hm.csv",
+      "source_path": "./data/h&m dataset\\articles_hm.csv",
+      "source_type": "csv",
+      "row_count": 105542,
+      "column_count": 25,
+      "columns": [
+        {
+          "name": "article_id",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 105542,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "794389002",
+            "740920001",
+            "909827001"
+          ]
+        },
+        {
+          "name": "product_code",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 47224,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "808748",
+            "752316",
+            "750744"
+          ]
+        },
+        {
+          "name": "prod_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 45875,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Price tank / Filippa",
+            "Tobermory set top",
+            "PQ JANET SILK DRESS"
+          ]
+        },
+        {
+          "name": "product_type_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 132,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "302",
+            "89",
+            "258"
+          ]
+        },
+        {
+          "name": "product_type_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 131,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Sweater",
+            "Bra",
+            "Earring"
+          ]
+        },
+        {
+          "name": "product_group_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 19,
+          "is_categorical": true,
+          "categorical_values": [
+            "Garment Upper body",
+            "Underwear",
+            "Socks & Tights",
+            "Garment Lower body",
+            "Accessories",
+            "Items",
+            "Nightwear",
+            "Unknown",
+            "Underwear/nightwear",
+            "Shoes",
+            "Swimwear",
+            "Garment Full body",
+            "Cosmetic",
+            "Interior textile",
+            "Bags",
+            "Furniture",
+            "Garment and Shoe care",
+            "Fun",
+            "Stationery"
+          ],
+          "sample_values": [
+            "Garment Full body",
+            "Swimwear",
+            "Garment Full body"
+          ]
+        },
+        {
+          "name": "graphical_appearance_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 30,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "1010016",
+            "1010012",
+            "1010001"
+          ]
+        },
+        {
+          "name": "graphical_appearance_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 30,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Solid",
+            "Solid",
+            "Solid"
+          ]
+        },
+        {
+          "name": "colour_group_code",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 50,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "93",
+            "9",
+            "73"
+          ]
+        },
+        {
+          "name": "colour_group_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 50,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Grey",
+            "Light Beige",
+            "Black"
+          ]
+        },
+        {
+          "name": "perceived_colour_value_id",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 8,
+          "is_categorical": true,
+          "categorical_values": [
+            "4",
+            "3",
+            "1",
+            "2",
+            "5",
+            "7",
+            "6",
+            "-1"
+          ],
+          "sample_values": [
+            "2",
+            "1",
+            "4"
+          ]
+        },
+        {
+          "name": "perceived_colour_value_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 8,
+          "is_categorical": true,
+          "categorical_values": [
+            "Dark",
+            "Light",
+            "Dusty Light",
+            "Medium Dusty",
+            "Bright",
+            "Medium",
+            "Undefined",
+            "Unknown"
+          ],
+          "sample_values": [
+            "Dark",
+            "Dark",
+            "Medium Dusty"
+          ]
+        },
+        {
+          "name": "perceived_colour_master_id",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 20,
+          "is_categorical": true,
+          "categorical_values": [
+            "5",
+            "9",
+            "11",
+            "12",
+            "2",
+            "4",
+            "6",
+            "18",
+            "1",
+            "3",
+            "15",
+            "13",
+            "7",
+            "8",
+            "20",
+            "19",
+            "14",
+            "-1",
+            "10",
+            "16"
+          ],
+          "sample_values": [
+            "13",
+            "4",
+            "12"
+          ]
+        },
+        {
+          "name": "perceived_colour_master_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 20,
+          "is_categorical": true,
+          "categorical_values": [
+            "Black",
+            "White",
+            "Beige",
+            "Grey",
+            "Blue",
+            "Pink",
+            "Lilac Purple",
+            "Red",
+            "Mole",
+            "Orange",
+            "Metal",
+            "Brown",
+            "Turquoise",
+            "Yellow",
+            "Khaki green",
+            "Green",
+            "undefined",
+            "Unknown",
+            "Yellowish Green",
+            "Bluish Green"
+          ],
+          "sample_values": [
+            "Grey",
+            "Pink",
+            "Pink"
+          ]
+        },
+        {
+          "name": "department_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 299,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "5690",
+            "1510",
+            "1647"
+          ]
+        },
+        {
+          "name": "department_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 250,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Kids Boy Big Acc",
+            "Dresses DS",
+            "Jersey"
+          ]
+        },
+        {
+          "name": "index_code",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 10,
+          "is_categorical": true,
+          "categorical_values": [
+            "A",
+            "B",
+            "G",
+            "F",
+            "C",
+            "S",
+            "H",
+            "D",
+            "I",
+            "J"
+          ],
+          "sample_values": [
+            "C",
+            "D",
+            "G"
+          ]
+        },
+        {
+          "name": "index_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 10,
+          "is_categorical": true,
+          "categorical_values": [
+            "Ladieswear",
+            "Lingeries/Tights",
+            "Baby Sizes 50-98",
+            "Menswear",
+            "Ladies Accessories",
+            "Sport",
+            "Children Sizes 92-140",
+            "Divided",
+            "Children Sizes 134-170",
+            "Children Accessories, Swimwear"
+          ],
+          "sample_values": [
+            "Children Sizes 92-140",
+            "Ladieswear",
+            "Ladieswear"
+          ]
+        },
+        {
+          "name": "index_group_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 5,
+          "is_categorical": true,
+          "categorical_values": [
+            "1",
+            "4",
+            "3",
+            "26",
+            "2"
+          ],
+          "sample_values": [
+            "26",
+            "2",
+            "4"
+          ]
+        },
+        {
+          "name": "index_group_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 5,
+          "is_categorical": true,
+          "categorical_values": [
+            "Ladieswear",
+            "Baby/Children",
+            "Menswear",
+            "Sport",
+            "Divided"
+          ],
+          "sample_values": [
+            "Ladieswear",
+            "Ladieswear",
+            "Menswear"
+          ]
+        },
+        {
+          "name": "section_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 57,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "50",
+            "20",
+            "15"
+          ]
+        },
+        {
+          "name": "section_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 56,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Womens Shoes",
+            "Divided Basics",
+            "Baby Girl"
+          ]
+        },
+        {
+          "name": "garment_group_no",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 21,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "1008",
+            "1005",
+            "1010"
+          ]
+        },
+        {
+          "name": "garment_group_name",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 21,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Shorts",
+            "Jersey Basic",
+            "Unknown"
+          ]
+        },
+        {
+          "name": "detail_desc",
+          "dtype": "str",
+          "null_count": 416,
+          "unique_count": 43404,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "Elastic bracelets in various designs.",
+            "Long-sleeved dress in printed cotton jersey with a round, ribbed neckline, press-stud on one shoulder and a seam with a flounce at the hem.",
+            "Long-sleeved top in cotton jersey with a polo neck. Slim Fit \\u2013 a fit that shapes in at the chest and tapers at the waist. This, combined with slightly narrower sleeves, creates a fitted silhouette."
+          ]
+        }
+      ],
+      "categorical_columns": [
+        "product_group_name",
+        "perceived_colour_value_id",
+        "perceived_colour_value_name",
+        "perceived_colour_master_id",
+        "perceived_colour_master_name",
+        "index_code",
+        "index_name",
+        "index_group_no",
+        "index_group_name"
+      ],
+      "numeric_columns": [],
+      "datetime_columns": []
+    },
+    {
+      "source_name": "customer_hm.csv",
+      "source_path": "./data/h&m dataset\\customer_hm.csv",
+      "source_type": "csv",
+      "row_count": 1048575,
+      "column_count": 6,
+      "columns": [
+        {
+          "name": "customer_id",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 1048575,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "438115c79dff2a87906634544d9128b51ec13963869a1344787546e507ac94e8",
+            "08acc5aa9eaf40aad5874f9e943f637d55b12125186ebdd058234c7347491410",
+            "9b8764047800494f7a1c41add13721b9c236fb9c1b558cb69fb94659d008891b"
+          ]
+        },
+        {
+          "name": "FN",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 2,
+          "is_categorical": true,
+          "categorical_values": [
+            "0",
+            "1"
+          ],
+          "sample_values": [
+            "0",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "name": "Active",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 2,
+          "is_categorical": true,
+          "categorical_values": [
+            "0",
+            "1"
+          ],
+          "sample_values": [
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "name": "club_member_status",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 3,
+          "is_categorical": true,
+          "categorical_values": [
+            "ACTIVE",
+            "PRE-CREATE",
+            "LEFT CLUB"
+          ],
+          "sample_values": [
+            "ACTIVE",
+            "ACTIVE",
+            "ACTIVE"
+          ]
+        },
+        {
+          "name": "fashion_news_frequency",
+          "dtype": "str",
+          "null_count": 1,
+          "unique_count": 3,
+          "is_categorical": true,
+          "categorical_values": [
+            "NONE",
+            "Regularly",
+            "Monthly",
+            "nan"
+          ],
+          "sample_values": [
+            "NONE",
+            "Regularly",
+            "Regularly"
+          ]
+        },
+        {
+          "name": "age",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 84,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "69",
+            "46",
+            "25"
+          ]
+        }
+      ],
+      "categorical_columns": [
+        "FN",
+        "Active",
+        "club_member_status",
+        "fashion_news_frequency"
+      ],
+      "numeric_columns": [],
+      "datetime_columns": []
+    },
+    {
+      "source_name": "transactions_hm.csv",
+      "source_path": "./data/h&m dataset\\transactions_hm.csv",
+      "source_type": "csv",
+      "row_count": 1048575,
+      "column_count": 5,
+      "columns": [
+        {
+          "name": "t_dat",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 365,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "2019-03-28",
+            "2019-02-18",
+            "2019-08-09"
+          ]
+        },
+        {
+          "name": "customer_id",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 458235,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "427b3cd8dff4372ae6db48c9684d455b37a80bb7e2a3b1fbcfed4591bd7a9b3e",
+            "d8693994620f417f9f7ba4bf08697f031c9e33fd82e97d521f88aef597b1c37f",
+            "1bc45fe2769b9d552b73ebb5484b33f47010ce31f56c924345f219054f747515"
+          ]
+        },
+        {
+          "name": "article_id",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 51279,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": []
+        },
+        {
+          "name": "price",
+          "dtype": "float64",
+          "null_count": 0,
+          "unique_count": 5382,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": []
+        },
+        {
+          "name": "sales_channel_id",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 2,
+          "is_categorical": true,
+          "categorical_values": [
+            "2",
+            "1"
+          ],
+          "sample_values": [
+            "2",
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "categorical_columns": [
+        "sales_channel_id"
+      ],
+      "numeric_columns": [],
+      "datetime_columns": []
+    }
+  ],
+  "relations": [
+    {
+      "source1": "articles_hm.csv",
+      "source2": "transactions_hm.csv",
+      "join_keys": [
+        "article_id"
+      ],
+      "relation_type": "1:N"
+    },
+    {
+      "source1": "customer_hm.csv",
+      "source2": "transactions_hm.csv",
+      "join_keys": [
+        "customer_id"
+      ],
+      "relation_type": "1:N"
+    }
+  ],
+  "overall_quality": "good",
+  "quality_issues": [
+    "customer_hm.csv의 fashion_news_frequency 컬럼에 결측치 1개 존재",
+    "articles_hm.csv의 detail_desc 컬럼에 결측치 416개 존재"
+  ]
+}

@@ -1,0 +1,35 @@
+# =============================================================================
+# settings.yaml - 파이프라인 설정
+# =============================================================================
+
+# LLM 모델 설정
+model:
+  provider: "google-gla"                   # PydanticAI 프로바이더
+  name: "gemini-3.1-flash-lite-preview"    # 모델명
+  temperature: 0.1                         # 응답 일관성 
+
+# Step별 Thinking Level 설정
+# Gemini 3 이상에서 사용 가능한 thinking level:
+#   - low:    빠르고 저비용. 단순 지시 수행에 적합
+#   - medium: 대부분의 작업에 균형잡힌 사고
+#   - high:   추론 깊이 극대화. 복잡한 판단에 적합 (느리지만 정확)
+thinking:
+  step_1_schema:  "medium"     # 스키마 분석 — 데이터 탐색 + 구조화
+  step_2_plan:    "high"       # 과제 정의 — 분석 전략 수립에 깊은 사고
+  step_3_codegen: "medium"     # 코드 생성 — 균형잡힌 코드 작성
+  step_4_execute: "medium"     # 코드 실행 — 실행/검토는 작업
+  step_5_report:  "high"       # 보고서 생성 — 종합 분석/인사이트 도출
+
+# 재시도 설정 (지수 백오프)
+retry:
+  max_retries: 5                # 최대 재시도 횟수 (429 rate limit 대비 충분히)
+  base_delay: 5.0               # 기본 대기 시간 (초)
+  max_delay: 120.0              # 최대 대기 시간 (초)
+
+# 파이프라인 실행 설정
+pipeline:
+  parallel: true               # 과제 병렬 처리 (true: 세마포어로 동시 호출 제한, false: 순차)
+  max_concurrent: 2            # 병렬 시 최대 동시 API 호출 수 (무료 플랜: 2~3 권장)
+  verbose: true                 # 실행 과정 상세 출력
+  step_delay: 1.0               # Step 간 대기 시간 (초)
+  task_delay: 1.0               # 과제 간 대기 시간 (초)

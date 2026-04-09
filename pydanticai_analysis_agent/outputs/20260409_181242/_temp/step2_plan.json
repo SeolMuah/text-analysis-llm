@@ -1,0 +1,45 @@
+{
+  "goal": "한국을 방문한 미국, 일본, 중국 관광객의 추세와 국가별 비교, 변화율을 분석하여 주요 인사이트를 도출한다.",
+  "data_source": "미국, 일본, 중국의 2020년 1월부터 2023년 1월까지의 월별 관광객 수 데이터 (CSV 파일 3종)",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "국가별 전체 관광객 추세 파악",
+      "question": "2020년부터 2023년까지 미국, 일본, 중국 관광객의 전체적인 추세는 어떠한가?",
+      "data_files": [
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\미국_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\일본_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\중국_202001_202301.csv"
+      ],
+      "method": "1. 3개 파일을 '날짜' 기준으로 병합하고 '날짜' 컬럼을 datetime 형식으로 변환. 2. 월별 전체 관광객 합계를 계산하여 추세 시각화. 3. print()로 기간 내 총 관광객 수와 월평균 관광객 수 출력.",
+      "output_type": "chart",
+      "chart_filename": "total_tourism_trend.png"
+    },
+    {
+      "number": 2,
+      "title": "국가별 관광객 수 비교",
+      "question": "미국, 일본, 중국 관광객 수의 월별 차이는 어떠한가?",
+      "data_files": [
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\미국_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\일본_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\중국_202001_202301.csv"
+      ],
+      "method": "1. 병합된 데이터를 사용하여 국가별 월별 관광객 수를 선 그래프로 시각화. 2. 국가별 평균 관광객 수를 계산. 3. print()로 국가별 평균 관광객 수와 최대/최소 관광객 수 출력.",
+      "output_type": "chart",
+      "chart_filename": "country_comparison.png"
+    },
+    {
+      "number": 3,
+      "title": "국가별 관광객 변화율 분석",
+      "question": "기간 동안 국가별 관광객 수의 변화율은 어떻게 되는가?",
+      "data_files": [
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\미국_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\일본_202001_202301.csv",
+        "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\중국_202001_202301.csv"
+      ],
+      "method": "1. 병합된 데이터를 사용하여 국가별 전월 대비 관광객 변화율(%) 계산. 2. 변화율이 가장 컸던 시점과 국가를 식별. 3. print()로 국가별 평균 변화율과 최대 변화율을 기록한 시점 출력.",
+      "output_type": "table",
+      "chart_filename": null
+    }
+  ]
+}

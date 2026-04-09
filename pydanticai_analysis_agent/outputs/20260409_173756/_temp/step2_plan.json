@@ -1,0 +1,53 @@
+{
+  "goal": "채널, 상품군, 고객 속성별 매출 데이터를 분석하여 매출 특징과 주요 인사이트를 도출합니다.",
+  "data_source": "./data/h&m dataset/articles_hm.csv, ./data/h&m dataset/customer_hm.csv, ./data/h&m dataset/transactions_hm.csv",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "전체 매출 현황 및 채널별 비중",
+      "question": "전체 매출 규모와 판매 채널(1, 2)별 매출 비중은 어떻게 되는가?",
+      "data_files": [
+        "./data/h&m dataset/transactions_hm.csv"
+      ],
+      "method": "transactions_hm.csv에서 price의 합계(전체 매출), 평균, 최대, 최소를 계산함. sales_channel_id별로 그룹화하여 매출 합계를 집계하고, 채널 간 매출 비중(%)을 비교 계산함. 최종적으로 전체 매출 지표와 채널별 매출 비교 결과를 print()로 출력함.",
+      "output_type": "metric",
+      "chart_filename": null
+    },
+    {
+      "number": 2,
+      "title": "상품군별 매출 성과 분석",
+      "question": "어떤 상품군이 가장 높은 매출을 기록하고 있는가?",
+      "data_files": [
+        "./data/h&m dataset/transactions_hm.csv",
+        "./data/h&m dataset/articles_hm.csv"
+      ],
+      "method": "transactions_hm.csv와 articles_hm.csv를 article_id 기준으로 조인함. product_group_name별로 price의 합계를 집계하고, 전체 매출 대비 각 상품군별 매출 비중(%)을 계산함. 매출 상위 10개 상품군을 선정하여 막대 그래프로 시각화하고, 주요 상품군별 매출 특징을 print()로 출력함.",
+      "output_type": "chart",
+      "chart_filename": "product_group_sales.png"
+    },
+    {
+      "number": 3,
+      "title": "고객 속성(연령대, 멤버십)별 매출 특징",
+      "question": "고객의 연령대와 멤버십 상태에 따라 매출에 차이가 있는가?",
+      "data_files": [
+        "./data/h&m dataset/transactions_hm.csv",
+        "./data/h&m dataset/customer_hm.csv"
+      ],
+      "method": "transactions_hm.csv와 customer_hm.csv를 customer_id 기준으로 조인함. age를 10세 단위로 그룹화하고, club_member_status와 함께 그룹화하여 매출 합계와 평균 구매 금액을 계산함. 전체 평균 대비 각 그룹의 매출 변화율을 계산하여 표로 정리하고, 주요 고객 속성별 매출 특징을 print()로 출력함.",
+      "output_type": "table",
+      "chart_filename": null
+    },
+    {
+      "number": 4,
+      "title": "채널 및 상품군별 매출 교차 분석",
+      "question": "판매 채널에 따라 선호되는 상품군에 차이가 있는가?",
+      "data_files": [
+        "./data/h&m dataset/transactions_hm.csv",
+        "./data/h&m dataset/articles_hm.csv"
+      ],
+      "method": "transactions_hm.csv와 articles_hm.csv를 조인함. sales_channel_id와 product_group_name을 기준으로 매출 합계를 교차 집계(pivot table)함. 채널별로 상품군 매출 비중을 계산하여 채널 간 상품군 선호도 차이를 비교함. 히트맵으로 시각화하고, 채널별 핵심 상품군 특징을 print()로 출력함.",
+      "output_type": "chart",
+      "chart_filename": "channel_product_heatmap.png"
+    }
+  ]
+}

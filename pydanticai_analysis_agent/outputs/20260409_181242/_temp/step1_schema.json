@@ -1,0 +1,188 @@
+{
+  "user_request": "한국 관광인 주요 분석",
+  "data_path": "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data",
+  "source_count": 3,
+  "sources": [
+    {
+      "source_name": "미국_202001_202301.csv",
+      "source_path": "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\미국_202001_202301.csv",
+      "source_type": "csv",
+      "row_count": 37,
+      "column_count": 3,
+      "columns": [
+        {
+          "name": "날짜",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "202206",
+            "202103",
+            "202210"
+          ]
+        },
+        {
+          "name": "국가명",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 1,
+          "is_categorical": true,
+          "categorical_values": [
+            "미국"
+          ],
+          "sample_values": [
+            "미국",
+            "미국",
+            "미국"
+          ]
+        },
+        {
+          "name": "관광객수",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "64861",
+            "17278",
+            "11922"
+          ]
+        }
+      ],
+      "categorical_columns": [],
+      "numeric_columns": [],
+      "datetime_columns": []
+    },
+    {
+      "source_name": "일본_202001_202301.csv",
+      "source_path": "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\일본_202001_202301.csv",
+      "source_type": "csv",
+      "row_count": 37,
+      "column_count": 3,
+      "columns": [
+        {
+          "name": "날짜",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "202204",
+            "202011",
+            "202208"
+          ]
+        },
+        {
+          "name": "국가명",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 1,
+          "is_categorical": true,
+          "categorical_values": [
+            "일본"
+          ],
+          "sample_values": [
+            "일본",
+            "일본",
+            "일본"
+          ]
+        },
+        {
+          "name": "관광객수",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "951",
+            "67159",
+            "1142"
+          ]
+        }
+      ],
+      "categorical_columns": [],
+      "numeric_columns": [],
+      "datetime_columns": []
+    },
+    {
+      "source_name": "중국_202001_202301.csv",
+      "source_path": "C:\\Users\\tjfan\\Desktop\\text-analysis-llm\\pydanticai_analysis_agent\\data/tourism_data\\중국_202001_202301.csv",
+      "source_type": "csv",
+      "row_count": 37,
+      "column_count": 3,
+      "columns": [
+        {
+          "name": "날짜",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "202202",
+            "202210",
+            "202208"
+          ]
+        },
+        {
+          "name": "국가명",
+          "dtype": "str",
+          "null_count": 0,
+          "unique_count": 1,
+          "is_categorical": true,
+          "categorical_values": [
+            "중국"
+          ],
+          "sample_values": [
+            "중국",
+            "중국",
+            "중국"
+          ]
+        },
+        {
+          "name": "관광객수",
+          "dtype": "int64",
+          "null_count": 0,
+          "unique_count": 37,
+          "is_categorical": false,
+          "categorical_values": null,
+          "sample_values": [
+            "14726",
+            "16275",
+            "12942"
+          ]
+        }
+      ],
+      "categorical_columns": [],
+      "numeric_columns": [],
+      "datetime_columns": []
+    }
+  ],
+  "relations": [
+    {
+      "source1": "미국_202001_202301.csv",
+      "source2": "일본_202001_202301.csv",
+      "join_keys": [
+        "날짜"
+      ],
+      "relation_type": "1:1"
+    },
+    {
+      "source1": "미국_202001_202301.csv",
+      "source2": "중국_202001_202301.csv",
+      "join_keys": [
+        "날짜"
+      ],
+      "relation_type": "1:1"
+    }
+  ],
+  "overall_quality": "good",
+  "quality_issues": [
+    "날짜 컬럼이 datetime 형식이 아닌 int64로 되어 있어 분석 시 변환 필요"
+  ]
+}
